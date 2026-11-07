@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Pênaltis PRO 2D</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="placar">
+    <div class="lado">
+      <b id="nEu">VOCÊ</b>
+      <div class="bolinhas" id="bEu"></div>
+    </div>
+    <div class="gols" id="golsEu">0</div>
+    <span>x</span>
+    <div class="gols" id="golsCpu">0</div>
+    <div class="lado">
+      <b id="nCpu">CPU</b>
+      <div class="bolinhas" id="bCpu"></div>
+    </div>
+  </div>
+
+  <div id="campo">
+    <canvas id="cv" width="360" height="420"></canvas>
+  </div>
+
+  <div id="msg"></div>
+
+  <div id="painel">
+    <div id="barra"><div id="marcador"></div></div>
+    <button class="btn" onclick="chutar()">⚽ CHUTAR!</button>
+  </div>
+
+  <div class="tela" id="menu">
+    <h1>⚽ PÊNALTIS PRO</h1>
+    <p style="margin:4px 0">Escolha seu time:</p>
+    <div id="selTime">
+      <button class="btn peq" onclick="trocaTime(-1)">‹</button>
+      <div>
+        <div id="camisa"></div>
+        <b id="timeNome"></b>
+      </div>
+      <button class="btn peq" onclick="trocaTime(1)">›</button>
+    </div>
+    <div>
+      <button class="btn peq" id="d-facil"
+        onclick="setDif('facil')">Fácil</button>
+      <button class="btn peq on" id="d-normal"
+        onclick="setDif('normal')">Normal</button>
+      <button class="btn peq" id="d-dificil"
+        onclick="setDif('dificil')">Difícil</button>
+    </div>
+    <button class="btn" onclick="jogar()">▶ JOGAR</button>
+    <button class="btn peq" id="somBtn"
+      onclick="toggleSom()">🔊 Som: ligado</button>
+    <div id="rec"></div>
+  </div>
+
+  <div class="tela oculta" id="fim">
+    <h1 id="fimTitulo"></h1>
+    <p id="fimTexto" style="font-size:22px"></p>
+    <div id="rec2" style="font-size:13px;opacity:.8"></div>
+    <button class="btn" onclick="jogar()">🔁 Jogar de novo</button>
+    <button class="btn peq" onclick="voltaMenu()">Menu</button>
+  </div>
+
+</div>
+
+<script src="dados.js"></script>
+<script src="som.js"></script>
+<script src="campo.js"></script>
+<script src="personagens.js"></script>
+<script src="jogo.js"></script>
+<script src="chutes.js"></script>
+<script src="campeonato.js"></script>
+</body>
+</html>
